@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        phonenumber: <input type="number" id="mobile" name="username" required><br><br>
+        email: <input type="email" id="email" name="email" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        document.querySelector("form").addEventListener("submit",function(e){
+            var mobile = document.getElementById("mobile").value;
+            var email = document.getElementById("email").value;
+            if(!mobile.startsWith("9"))
+            {
+                alert("Mobile number should start with 9 and contain exactly 10 digits.");
+                e.preventDefault();
+            }
+            if(mobile.length !== 10)
+            {
+                alert("Mobile number should  contain exactly 10 digits.");
+                e.preventDefault();
+            }
+
+            if(!email.includes("@") || !email.includes("gvpce.ac.in"))
+            {
+                alert("Email should contain @ and should be from gvpce.ac.in domain.");
+                e.preventDefault();
+            }
+        })
+    </script>
+</body>
+</html>

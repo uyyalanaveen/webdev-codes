@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="radio" name="color" value="red"> Red<br>
+        <input type="radio" name="color" value="blue"> Blue<br>
+        <input type="radio" name="color" value="green"> Green<br>
+    </form>
+    <script>
+        var colorRadios = document.querySelectorAll("input[name='color']");
+        colorRadios.forEach(function(radio) {
+            radio.addEventListener("change", function() {
+                var colorSelected = document.querySelector("input[name='color']:checked");
+                document.body.style.backgroundColor = colorSelected.value;
+            });
+        });
+    </script>
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!-- FILEPATH: /home/naveen/college-use/sem-6/webdev/internal-1/practice/2a.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form id="registrationForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="mobile">Mobile Number:</label>
+        <input type="text" id="mobile" name="mobile" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            var username = document.getElementById("username").value;
+            var mobile = document.getElementById("mobile").value;
+            
+            if (username.length < 6) {
+                alert("Username should contain at least 6 characters.");
+                event.preventDefault();
+            }
+            
+            if (!mobile.startsWith("9") || mobile.length !== 10) {
+                alert("Mobile number should start with 9 and contain exactly 10 digits.");
+                event.preventDefault();
+            }
+           
+        });
+    </script>
+    
+</body>
+</html>

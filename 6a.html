@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="radio" name="gender" id="male">male <br>
+        <input type="radio" name="gender" id="female">female <br>
+        <select name="hobbies" id="hobbies" >
+            <option value="reading">Reading</option>
+            <option value="sports">Sports</option>
+            <option value="music">Music</option>
+            <option value="cooking">Cooking</option>
+            <option value="traveling">Traveling</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        document.querySelector("form").addEventListener("submit", function(event) {
+            var genderSelected = document.querySelector("input[name='gender']:checked");
+            var hobbySelected = document.querySelector("#hobbies").value;
+
+            if (!genderSelected || !hobbySelected) {
+                event.preventDefault();
+                alert("Please select at least one gender and one hobby.");
+            }
+        });
+    </script>
+</body>
+</html>
